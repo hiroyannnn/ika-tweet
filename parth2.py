@@ -12,5 +12,7 @@ data = json.load(f,strict=False)
 f.close()
  
 # 普通に表示
+# 普通に表示
+# 普通に表示
 print("普通に表示")
 print(data)
