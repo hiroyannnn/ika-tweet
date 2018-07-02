@@ -3,7 +3,7 @@
 import ika
 
 # リザルトを取得
-getResult()
+ika.getResult()
 
 # 加工
 
