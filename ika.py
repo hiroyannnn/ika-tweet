@@ -11,7 +11,7 @@ import settings
 def printJson(url): # Jsonを取得してprint
     cookie = "iksm_session=" + settings.iksm_session
     opener = build_opener(HTTPCookieProcessor(CookieJar()))
-    opener.addheaders.append(("Cookie", cooie))
+    opener.addheaders.append(("Cookie", cookie))
     res = opener.open(url)
     print (codecs.decode(res.read(), 'unicode-escape'))
 
