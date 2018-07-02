@@ -7,7 +7,7 @@ import codecs
 import settings
 
 def printJson(url): # Jsonを取得してprint
-    cookie = "iksm_session=settings.iksm_session"
+    cookie = "iksm_session=" + settings.iksm_session
     opener = build_opener(HTTPCookieProcessor(CookieJar()))
     opener.addheaders.append(("Cookie", cookie))
     res = opener.open(url)
@@ -19,4 +19,6 @@ def printJson(url): # Jsonを取得してprint
 #printJson("https://app.splatoon2.nintendo.net/api/records") # 今の装備や塗った面積等の取得
 #printJson("https://app.splatoon2.nintendo.net/api/timeline") # フレンドの状況？
 #printJson("https://app.splatoon2.nintendo.net/api/onlineshop/merchandises") # ギアショップの情報
-printJson("https://app.splatoon2.nintendo.net/api/results") # 各バトルのデータ
+
+def getResult():
+    printJson("https://app.splatoon2.nintendo.net/api/results") # 各バトルのデータ
