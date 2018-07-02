@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
 import urllib
 from urllib.request import build_opener, HTTPCookieProcessor
 from urllib.parse import urlencode
@@ -9,7 +11,7 @@ import settings
 def printJson(url): # Jsonを取得してprint
     cookie = "iksm_session=" + settings.iksm_session
     opener = build_opener(HTTPCookieProcessor(CookieJar()))
-    opener.addheaders.append(("Cookie", cookie))
+    opener.addheaders.append(("Cookie", cooie))
     res = opener.open(url)
     print (codecs.decode(res.read(), 'unicode-escape'))
 
