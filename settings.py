@@ -1,0 +1,5 @@
+consumer_key="your consumer_key"
+consumer_secret="your consumer_secret"
+token="your token"
+token_secret="your token_secret"
+iksm_session="your iksm_session"
