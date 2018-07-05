@@ -52,3 +52,16 @@ def postTweetText():
         print ("OK")
     else:
         print ("Error: %d" % req.status_code)
+
+def getTimeLine():
+    url = "https://api.twitter.com/1.1/statuses/home_timeline.json"
+    params = {'count': 100}
+
+    # ツイート本文
+    req = twitter.get(url, params = params)
+    # レスポンスを確認
+    if req.status_code == 200:
+        print ("OK")
+    else:
+        print ("Error: %d" % req.status_code)
+    print(req.text)
