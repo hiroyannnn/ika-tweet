@@ -25,13 +25,13 @@ def main():
         user_description = tweet[u'user'][u'description']
         screen_name = tweet[u'user'][u'screen_name']
         user_name = tweet[u'user'][u'name']
-        print "tweet_id:", tweet_id
-        print "text:", text
-        print "created_at:", created_at
-        print "user_id:", user_id
-        print "user_desc:", user_description
-        print "screen_name:", screen_name
-        print "user_name:", user_name
+        print ("tweet_id:", tweet_id)
+        print ("text:", text)
+        print ("created_at:", created_at)
+        print ("user_id:", user_id)
+        print ("user_desc:", user_description)
+        print ("screen_name:", screen_name)
+        print ("user_name:", user_name)
     return
 
 
@@ -55,7 +55,7 @@ def tweet_search(search_word, oath_key_dict):
     oath = create_oath_session(oath_key_dict)
     responce = oath.get(url, params = params)
     if responce.status_code != 200:
-        print "Error code: %d" %(responce.status_code)
+        print ("Error code: %d" %(responce.status_code))
         return None
     tweets = json.loads(responce.text)
     return tweets
