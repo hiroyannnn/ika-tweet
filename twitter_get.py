@@ -47,7 +47,7 @@ def create_oath_session(oath_key_dict):
 def tweet_search(search_word, oath_key_dict):
     url = "https://api.twitter.com/1.1/search/tweets.json?"
     params = {
-        "q": unicode(search_word),
+        "q": search_word,
         "lang": "ja",
         "result_type": "recent",
         "count": "15"
