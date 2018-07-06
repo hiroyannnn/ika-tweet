@@ -3,7 +3,7 @@
 # -*- coding:utf-8 -*-
  
 import settings
-from requests_oauthlib import OAuth1Session
+from lib/requests_oauthlib import OAuth1Session
 import json
 
 # key
@@ -42,9 +42,9 @@ def postTweetWithPicture():
 
     print ("OK")
 
-def postTweetText():
+def postTweetText(text):
     # ツイート本文
-    params = {"status": "Hello, World!"}
+    params = {"status": text}
     req = twitter.post(url_text, params = params)
 
     # レスポンスを確認
@@ -64,4 +64,27 @@ def getTimeLine():
         print ("OK")
     else:
         print ("Error: %d" % req.status_code)
-    print(req.text)
+    tweets = json.loads(req.text)
+
+### Functions                                                                                                                                                     
+def main():
+    tweets = getTimeLine()
+    for tweet in tweets["statuses"]:
+        tweet_id = tweet[u'id_str']
+        text = tweet[u'text']
+        created_at = tweet[u'created_at']
+        user_id = tweet[u'user'][u'id_str']
+        user_description = tweet[u'user'][u'description']
+        screen_name = tweet[u'user'][u'screen_name']
+        user_name = tweet[u'user'][u'name']
+        #print ("tweet_id:", tweet_id)
+        print ("text:", text)
+        print ("created_at:", created_at)
+        #print ("user_id:", user_id)
+        #print ("user_desc:", user_description)
+        #print ("screen_name:", screen_name)
+        print ("user_name:", user_name)
+    return
+### Execute                                                                                                                                                       
+if __name__ == "__main__":
+    main()
