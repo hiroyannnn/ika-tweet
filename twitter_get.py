@@ -25,12 +25,12 @@ def main():
         user_description = tweet[u'user'][u'description']
         screen_name = tweet[u'user'][u'screen_name']
         user_name = tweet[u'user'][u'name']
-        print ("tweet_id:", tweet_id)
+        #print ("tweet_id:", tweet_id)
         print ("text:", text)
         print ("created_at:", created_at)
-        print ("user_id:", user_id)
-        print ("user_desc:", user_description)
-        print ("screen_name:", screen_name)
+        #print ("user_id:", user_id)
+        #print ("user_desc:", user_description)
+        #print ("screen_name:", screen_name)
         print ("user_name:", user_name)
     return
 
